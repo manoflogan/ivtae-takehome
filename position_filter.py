@@ -26,7 +26,6 @@ def filter_solution_2(genome_data, filter_definition):
     for (entry, base) in genome_data:
         genome_dict[entry] = base
         index = 0
-        matched_keys[entry] = None
         while index < len(base):
             matched_keys[entry + index] = entry
             index += 1
