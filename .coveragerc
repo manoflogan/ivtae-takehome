@@ -1,0 +1,11 @@
+[paths]
+source=*.py
+
+[run]
+omit=
+    env/**
+    **/*test*.py
+
+[html]
+directory=coverage
+title=Invitae Code Coverage Test
