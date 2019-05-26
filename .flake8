@@ -1,0 +1,9 @@
+[flake8]
+max-line-length=80
+include =
+    position_filter.py,
+    tests/*.py
+exclude =
+    env,
+    **/__pycache__/**,
+max-complexity = 10

@@ -5,15 +5,18 @@
 
 import collections
 
+
 def filter_solution_1(genome_data, filter_definition):
     # TODO fill this out for task #1
     genome_dict = dict()
     for (entry, base) in genome_data:
-      genome_dict[entry] = base
+        genome_dict[entry] = base
     output = []
     for (start, end) in filter_definition:
-      filter_solution = [[index, genome_dict[index]] for index in range(start, end) if index in genome_dict]
-      output.extend(filter_solution)
+        filter_solution = [[index, genome_dict[index]]
+                           for index in range(start, end)
+                           if index in genome_dict]
+        output.extend(filter_solution)
     return output
 
 
@@ -38,7 +41,6 @@ def filter_solution_2(genome_data, filter_definition):
     return output
 
 
-
 def filter_solution_3(genome_data, filter_definition):
     genome_dict = dict()
     for (entry, base) in genome_data:
@@ -49,14 +51,14 @@ def filter_solution_3(genome_data, filter_definition):
 
     output = []
     for (start, end) in filter_definition:
-        filtered_output = [[index, genome_dict[index]] for index in range(start, end) if index in genome_dict]
+        filtered_output = [[index, genome_dict[index]]
+                           for index in range(start, end)
+                           if index in genome_dict]
         output.extend(filtered_output)
     return output
 
 
 def filter_solution_4(genome_data, filter_definition):
-    # TODO fill this out for task
-    #4
     genome_dict = collections.defaultdict(list)
     for (base, entry) in genome_data:
         index = 0
@@ -72,9 +74,3 @@ def filter_solution_4(genome_data, filter_definition):
             filtered_output = [[index, key] for key in base_list]
             output.extend(filtered_output)
     return output
-
-
-if __name__ == '__main__':
-    genome_data = [[5, "GAT"], [15, "G"], [19, "TC"], [22, "T"]]
-    filter_data = [[6, 7], [15, 20]]
-    print (filter_solution_3(genome_data, filter_data))
