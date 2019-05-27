@@ -25,10 +25,8 @@ def filter_solution_2(genome_data, filter_definition):
     matched_keys = dict()
     for (entry, base) in genome_data:
         genome_dict[entry] = base
-        index = 0
-        while index < len(base):
+        for index in range(len(base)):
             matched_keys[entry + index] = entry
-            index += 1
     output = []
     for (start, end) in filter_definition:
         for index in range(start, end):
@@ -43,10 +41,8 @@ def filter_solution_2(genome_data, filter_definition):
 def filter_solution_3(genome_data, filter_definition):
     genome_dict = dict()
     for (entry, base) in genome_data:
-        index = 0
-        while index < len(base):
+        for index in range(len(base)):
             genome_dict[entry + index] = base[index]
-            index += 1
 
     output = []
     for (start, end) in filter_definition:
@@ -59,10 +55,9 @@ def filter_solution_3(genome_data, filter_definition):
 
 def filter_solution_4(genome_data, filter_definition):
     genome_dict = collections.defaultdict(list)
-    for (base, entry) in genome_data:
-        index = 0
-        while index < len(entry):
-            genome_dict[base + index].append(entry[index])
+    for (entry, base) in genome_data:
+        for index in range(len(base)):
+            genome_dict[entry + index].append(base[index])
             index += 1
     output = []
     for (start, end) in filter_definition:
